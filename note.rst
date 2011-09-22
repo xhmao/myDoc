@@ -2,18 +2,17 @@
 Python核心编程
 ==============
 
-Chapter 1
-=========
+Chapter 1 欢迎来到Python世界
+============================
 
 * 如果命令的路径不确定或者经常变化，env就非常有用，env会在PATH路径中搜索命令来执行，如下::
-  #!/usr/bin/env python
-
+  #!/usr/bin/env python 
 * 请找到自己系统中python标准库的路径
 
 * 启动python解释器，在屏幕上打印*hello world*，然后退出解释器；编写一个脚本，这个脚本也是在屏幕上打印*hello world*
 
-Chapter 2
-=========
+Chapter 2 Python起步
+====================
 
 * python有两种方式来完成你的要求：语句和表达式。语句使用关键字来组成命令，而表达式没有关键字
 
@@ -101,13 +100,68 @@ Chapter 2
 
 * range(), len(), enumerate()
 
-p48
+* 列表解析或叫列表表达式，这是个让人欣喜的功能::
+  >>> squared = [x ** 2 for x in range(4)]
+  >>> for i in squared
+  ...  print i
+  0
+  1
+  4
+  9
+  >>> sqdEvens = [x ** 2 for x in range(8) if not x % 2]
 
+* open('filename', 'rwab+'), file()
 
+* 属性是与数据有关的项目，属性可以是简单的数值，也可以是可执行的对象，如函数和方法。拥有属性的对象很多，如类、模块、文件还有复数等等对象都有属性。我们使用句点访问属性::
+  object.attribute
 
+* 错误和异常：try-except，我们可以通过raise语句引发一个异常
 
+* 函数使用小括号*()*调用，函数在调用之前必须先定义。如果函数中没有return语句，就会自动返回None对象。python是通过引用调用的。这意味着函数内对参数的改变会影响到原始的对象::
+  >>> def foo()
+  ...  return True
 
+* 类，可以提供一个可选的父类，如果没有适合的基类，就使用object做基类，所有名字开始和结束都有两个下划线的方法都是特殊方法
 
+* 当一个类的实例被创建时，__init__()方法会自动执行，类似构造函数，每个方法都有一个self参数，它是类实例自身的引用。其他语言通常使用一个名为this的标识符::
+  >>> class FooClass(object):
+  ...   """my very first class:FooClass"""
+  ...   version = 0.1 #class attribute
+  ...   def __init__(self, nm='xhmao'):
+  ...     """constructor"""
+  ...     self.name = nm
+  ...     print 'Created a class instance for', nm
+  ...
+  ...   def showself, xx):
+  ...     ...
+  ...
+  >>> fool = FooClass()
+  >>> fool.show(xx)
+
+* 模块，模块导入和属性的引用
+
+* PEP(Python Enhancement Proposal)：Python增强提案
+
+* type()可以查看对象的类型::
+  >>> type(dir)
+  >>> type('fmsoft')
+
+Chapter 3 Python基础
+====================
+
+* python语句一般使用换行分割，一行过长的语句可以使用反斜杠*\*分解成几行。有一种例外不用反斜杠也可以跨行，在使用闭合操作符时可以多行书写。另外就是三引号包括下的字符串也可以跨行书写。
+
+* 链式赋值是被允许的，增量赋值也是允许的，但是自增自减不被允许::
+  >>> y = x = x + 1
+  >>> x += 1
+
+* python在赋值之前，已经对新值做了计算，因此对于python，要交换两个变量的值，只需这样做::
+  >>> x, y = 1, 2
+  >>> x, y = y, x
+
+* **68页表3.1列出了python的关键字**
+
+p68
 
 
 
